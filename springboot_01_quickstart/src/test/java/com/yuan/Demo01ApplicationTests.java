@@ -8,7 +8,7 @@ class Demo01ApplicationTests {
 
 	@Test
 	void contextLoads() {
-
+		System.out.println("demo01 junit test running...");
 	}
 
 }
