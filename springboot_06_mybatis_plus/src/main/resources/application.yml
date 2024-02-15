@@ -1,0 +1,13 @@
+#2.配置相关的mybatis信息
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/ssm_db?serverTimezone=UTC
+    username: root
+    password: 123456
+
+#3.设置mybatis-plus配置
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: tbl_
