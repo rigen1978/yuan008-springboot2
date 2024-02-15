@@ -1,0 +1,21 @@
+#1.配置服务器端口
+server:
+  port: 80
+
+#配置datasource
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3307/ssm_db?serverTimezone=UTC
+      username: root
+      password: 123456
+
+#配置mybatis-plus相关
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: tbl_
+      id-type: auto     #设定id为自增
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   #打开mybatis-plus日志功能
