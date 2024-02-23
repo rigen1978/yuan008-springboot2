@@ -1,10 +1,10 @@
-package com.yuan.service.impl;
+package com.yuan.service.bk.impl;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.yuan.dao.BookDao;
 import com.yuan.domain.Book;
-import com.yuan.service.BookService;
+import com.yuan.service.bk.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * @className: BookServiceImpl
- * @package: com.yuan.service.impl
+ * @package: com.yuan.service.bk.impl
  * @description:
  * @author: liyuan
  * @create: 2024/02/18 0:59

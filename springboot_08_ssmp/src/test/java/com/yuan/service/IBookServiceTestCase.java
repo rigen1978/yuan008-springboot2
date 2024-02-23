@@ -1,8 +1,8 @@
 package com.yuan.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.yuan.domain.Book;
-import com.yuan.service.bk.BookService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,14 +16,14 @@ import org.springframework.boot.test.context.SpringBootTest;
  * @version: 1.0
  */
 @SpringBootTest
-public class BookServiceTestCase {
+public class IBookServiceTestCase {
 	@Autowired
-	private BookService bookService;
+	private IBookService bookService;
 
 
 	@Test
 	void testGetById() {
-		System.out.println(bookService.getById(4));
+		System.out.println(bookService.getById(1));
 	}
 
 	@Test
@@ -42,22 +42,24 @@ public class BookServiceTestCase {
 		book.setType("测试数据abcdefg");
 		book.setName("测试数据123");
 		book.setDescription("测试数据123");
-		bookService.update(book);
+		bookService.updateById(book);
 	}
 
 	@Test
 	void testDelete() {
-		bookService.delete(16);
+		bookService.removeById(16);
 	}
 
 	@Test
 	void testGetAll() {
-		bookService.getAll();
+		bookService.list();
 	}
 
 	@Test
 	void testGetPage() {
-		IPage<Book> page = bookService.getPage(2, 5);
+
+		IPage<Book> page = new Page<Book>(2, 5);
+		bookService.page(page);
 		System.out.println(page.getCurrent());
 		System.out.println(page.getSize());
 		System.out.println(page.getTotal());
